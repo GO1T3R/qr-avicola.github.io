@@ -22,13 +22,16 @@ body {
   display: grid;
   place-items: start center;
   background-color: var(--blue-deep);
-  background-image: linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px), linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-image: linear-gradient(rgb(8 30 77 / 0.84), rgb(8 30 77 / 0.9)), url("Collage.jpg"), linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px), linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-position: center, center, center, center;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+  background-size: cover, cover, 28px 28px, 28px 28px;
+  background-attachment: fixed, fixed, fixed, fixed;
 }
 
 .profile-card {
   width: min(100%, 460px);
-  padding: 38px 18px 48px;
+  padding: 38px 18px 96px;
 }
 
 .profile-header {
@@ -40,7 +43,7 @@ body {
 }
 
 .profile-logo {
-  width: min(100%, 340px);
+  width: min(100%, 300px);
   min-width: 0;
   aspect-ratio: 2.9;
   display: grid;
@@ -97,35 +100,47 @@ h1 {
 
 .links-list {
   display: grid;
-  gap: 11px;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .link-item a {
-  min-height: 62px;
+  min-height: 58px;
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 12px 18px;
-  border-radius: 8px;
-  border: 1px solid rgb(239 184 16 / 0.24);
-  background: rgb(31 59 117 / 0.88);
+  gap: 13px;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgb(239 184 16 / 0.34);
+  background: transparent;
   color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
   line-height: 1.25;
   text-decoration: none;
-  box-shadow: 0 10px 22px rgb(2 11 32 / 0.22);
-  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.link-item a::after {
+  margin-left: auto;
+  color: var(--gold);
+  content: "→";
+  font-size: 1.15rem;
+  font-weight: 400;
+  transition: transform 160ms ease;
 }
 
 .link-item a:hover,
 .link-item a:focus-visible {
   border-color: var(--gold-bright);
-  background: #294b8c;
-  transform: translateY(-1px);
+  color: var(--gold-bright);
+  transform: translateX(4px);
+}
+
+.link-item a:hover::after,
+.link-item a:focus-visible::after {
+  transform: translateX(3px);
 }
 
 .link-item a:focus-visible {
@@ -134,21 +149,73 @@ h1 {
 }
 
 .link-icon {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   display: grid;
   place-items: center;
-  flex: 0 0 30px;
-  border: 1px solid currentcolor;
-  border-radius: 50%;
-  font-size: 0.85rem;
+  flex: 0 0 20px;
+  font-size: 1rem;
 }
 
-.facebook { color: var(--gold); }
-.instagram { color: var(--gold-bright); }
-.whatsapp { color: var(--gold); }
-.email { color: var(--gold-bright); }
-.website { color: var(--gold); }
+.facebook { color: var(--color); }
+.instagram { color: var(--color); }
+.whatsapp { color: var(--color); }
+.email { color: var(--color); }
+.website { color: var(--color); }
+
+.announcement-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  border-top: 1px solid var(--gold-muted);
+  background: rgb(8 30 77 / 0.96);
+  backdrop-filter: blur(8px);
+}
+
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: announcement-scroll 28s linear infinite;
+}
+
+.announcement-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 28px;
+  border-right: 1px solid rgb(239 184 16 / 0.32);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.announcement-item i {
+  color: var(--gold);
+}
+
+.announcement-label {
+  color: var(--gold-bright);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes announcement-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+  }
+}
 
 @media (min-width: 480px) {
   body {
