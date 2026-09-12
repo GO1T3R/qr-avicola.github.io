@@ -22,7 +22,7 @@ body {
   display: grid;
   place-items: start center;
   background-color: var(--blue-deep);
-  background-image: linear-gradient(rgb(8 30 77 / 0.84), rgb(8 30 77 / 0.9)), url("Collage.jpg"), linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px), linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-image: linear-gradient(rgb(8 30 77 / 0.84), rgb(8 30 77 / 0.9)), url("https://iili.io/nq2a78Q.md.jpg"), linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px), linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px);
   background-position: center, center, center, center;
   background-repeat: no-repeat, no-repeat, repeat, repeat;
   background-size: cover, cover, 28px 28px, 28px 28px;
