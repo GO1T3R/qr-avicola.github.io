@@ -163,60 +163,6 @@ h1 {
 .email { color: var(--color); }
 .website { color: var(--color); }
 
-.announcement-bar {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  border-top: 1px solid var(--gold-muted);
-  background: rgb(8 30 77 / 0.96);
-  backdrop-filter: blur(8px);
-}
-
-.announcement-track {
-  display: flex;
-  width: max-content;
-  animation: announcement-scroll 28s linear infinite;
-}
-
-.announcement-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 8px 28px;
-  border-right: 1px solid rgb(239 184 16 / 0.32);
-  color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.announcement-item i {
-  color: var(--gold);
-}
-
-.announcement-label {
-  color: var(--gold-bright);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-@keyframes announcement-scroll {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .announcement-track {
-    animation: none;
-  }
-}
-
 @media (min-width: 480px) {
   body {
     place-items: center;

@@ -9,21 +9,6 @@ const profile = {
   ],
 };
 
-const promotions = [
-  {
-    tag: "Promoción de temporada",
-    title: "Pavo",
-    description: "Consulta disponibilidad y precios especiales para tu pedido.",
-    icon: "fa-solid fa-drumstick-bite",
-  },
-  {
-    tag: "Producto",
-    title: "Huevo",
-    description: "Frescura y calidad para tu negocio todos los días.",
-    icon: "fa-solid fa-egg",
-  },
-];
-
 document.title = `${profile.businessName} | Enlaces`;
 document.querySelector("#business-name").textContent = profile.businessName;
 document.querySelector("#business-handle").textContent = profile.handle;
@@ -51,16 +36,3 @@ profile.links.forEach(({ label, url, icon, color }) => {
   linksList.append(listItem);
 });
 
-const announcementTrack = document.querySelector("#announcement-track");
-
-function createAnnouncement(promotion) {
-  return `
-    <span class="announcement-item">
-      <i class="${promotion.icon}" aria-hidden="true"></i>
-      <span class="announcement-label">${promotion.tag}</span>
-      <span>${promotion.title}: ${promotion.description}</span>
-    </span>`;
-}
-
-const announcementItems = promotions.map(createAnnouncement).join("");
-announcementTrack.innerHTML = announcementItems + announcementItems;
