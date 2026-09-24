@@ -148,6 +148,80 @@ h1 {
   outline-offset: 3px;
 }
 
+.phone-card {
+  border-bottom: 1px solid rgb(239 184 16 / 0.34);
+}
+
+.phone-toggle {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  cursor: pointer;
+  list-style: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.phone-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.phone-toggle::after {
+  margin-left: auto;
+  color: var(--gold);
+  content: "+";
+  font-size: 1.35rem;
+  font-weight: 400;
+  transition: transform 160ms ease;
+}
+
+.phone-card[open] .phone-toggle::after {
+  content: "−";
+}
+
+.phone-toggle:hover,
+.phone-toggle:focus-visible {
+  color: var(--gold-bright);
+  transform: translateX(4px);
+}
+
+.phone-toggle:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.phone-panel {
+  display: grid;
+  gap: 10px;
+  padding: 0 8px 14px 41px;
+}
+
+.phone-link {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.phone-link:hover,
+.phone-link:focus-visible {
+  color: var(--gold-bright);
+}
+
+.extension-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  color: rgb(255 255 255 / 0.85);
+  font-size: 0.84rem;
+}
+
 .link-icon {
   width: 20px;
   height: 20px;
